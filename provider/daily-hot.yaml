@@ -1,0 +1,58 @@
+identity:
+  author: "Flying-Tom"
+  name: "daily-hot"
+  label:
+    en_US: "Daily Hot"
+    zh_Hans: "每日热榜"
+  description:
+    en_US: "Provider for Daily Hot Topics from 40+ sources via DailyHotApi"
+    zh_Hans: "基于 DailyHotApi 提供的每日热榜内容，支持 40+ 数据源"
+  # icon: "icon.png"
+  icon: "icon.png"
+
+# credentials_schema:
+#   - name: "api_base_url"
+#     type: "text-input"
+#     required: false
+#     label:
+#       en_US: "API Base URL"
+#       zh_Hans: "API 基础 URL"
+#     placeholder:
+#       en_US: "https://api.hot.imsyy.top"
+#       zh_Hans: "https://api.hot.imsyy.top"
+#     help_text:
+#       en_US: "The base URL of the DailyHot API service. Leave empty to use the default."
+#       zh_Hans: "DailyHot API 服务的基础 URL。留空使用默认值。"
+
+#   - name: "timeout"
+#     type: "number-input"
+#     required: false
+#     label:
+#       en_US: "Request Timeout (seconds)"
+#       zh_Hans: "请求超时时间（秒）"
+#     help_text:
+#       en_US: "The timeout duration for API requests (1-120 seconds). Leave empty to use default (10 seconds)."
+#       zh_Hans: "API 请求的超时时间（1-120 秒）。留空使用默认值（10 秒）。"
+
+credentials_for_provider:
+  daily_hot_url:
+    type: text-input
+    required: false
+    default: https://api-hot.imsyy.top/
+    label:
+      en_US: Daily Hot URL
+      zh_Hans: 每日热榜 URL
+    placeholder:
+      en_US: Please input your Daily Hot URL
+      zh_Hans: 请配置你的每日热榜 URL
+    help:
+      en_US: Get your Daily Hot URL from https://github.com/imsyy/DailyHotApi
+      zh_Hans: 从 https://github.com/imsyy/DailyHotApi 获取你的每日热榜 URL
+    url: https://github.com/imsyy/DailyHotApi
+
+tools:
+  - tools/daily-hot.yaml
+
+extra:
+  python:
+    source: provider/daily-hot.py

@@ -1,0 +1,186 @@
+identity:
+  name: "daily-hot"
+  author: "Flying-Tom"
+  label:
+    en_US: "daily-hot"
+    zh_Hans: "daily-hot"
+description:
+  human:
+    en_US: "Fetch hot topics from DailyHotApi (supports 40+ sources)"
+    zh_Hans: "获取今日热榜数据 (支持40+数据源)"
+  llm: "Fetch hot topics and trending content from various sources including weibo, zhihu, douyin, bilibili, news websites, tech sites, gaming forums and more."
+parameters:
+  - name: source
+    type: select
+    required: true
+    options:
+      - value: "weibo"
+        label:
+          en_US: "Weibo"
+          zh_Hans: "微博"
+      - value: "zhihu"
+        label:
+          en_US: "Zhihu"
+          zh_Hans: "知乎"
+      - value: "douyin"
+        label:
+          en_US: "Douyin"
+          zh_Hans: "抖音"
+      - value: "bilibili"
+        label:
+          en_US: "Bilibili"
+          zh_Hans: "哔哩哔哩"
+      - value: "36kr"
+        label:
+          en_US: "36Kr"
+          zh_Hans: "36氪"
+      - value: "baidu"
+        label:
+          en_US: "Baidu"
+          zh_Hans: "百度"
+      - value: "toutiao"
+        label:
+          en_US: "Toutiao"
+          zh_Hans: "今日头条"
+      - value: "tieba"
+        label:
+          en_US: "Tieba"
+          zh_Hans: "百度贴吧"
+      - value: "juejin"
+        label:
+          en_US: "Juejin"
+          zh_Hans: "稀土掘金"
+      - value: "github"
+        label:
+          en_US: "GitHub"
+          zh_Hans: "GitHub"
+      - value: "hackernews"
+        label:
+          en_US: "Hacker News"
+          zh_Hans: "Hacker News"
+      - value: "v2ex"
+        label:
+          en_US: "V2EX"
+          zh_Hans: "V2EX"
+      - value: "csdn"
+        label:
+          en_US: "CSDN"
+          zh_Hans: "CSDN"
+      - value: "sina-news"
+        label:
+          en_US: "Sina News"
+          zh_Hans: "新浪新闻"
+      - value: "qq-news"
+        label:
+          en_US: "QQ News"
+          zh_Hans: "腾讯新闻"
+      - value: "netease-news"
+        label:
+          en_US: "Netease News"
+          zh_Hans: "网易新闻"
+      - value: "sspai"
+        label:
+          en_US: "Sspai"
+          zh_Hans: "少数派"
+      - value: "ithome"
+        label:
+          en_US: "ITHome"
+          zh_Hans: "IT之家"
+      - value: "thepaper"
+        label:
+          en_US: "ThePaper"
+          zh_Hans: "澎湃新闻"
+      - value: "genshin"
+        label:
+          en_US: "Genshin"
+          zh_Hans: "原神"
+      - value: "honkai"
+        label:
+          en_US: "Honkai"
+          zh_Hans: "崩坏：星穹铁道"
+      - value: "lol"
+        label:
+          en_US: "LOL"
+          zh_Hans: "LOL"
+      - value: "ngabbs"
+        label:
+          en_US: "NGA"
+          zh_Hans: "NGA"
+      - value: "smzdm"
+        label:
+          en_US: "SMZDM"
+          zh_Hans: "什么值得买"
+      - value: "acfun"
+        label:
+          en_US: "AcFun"
+          zh_Hans: "AcFun"
+      - value: "douban-movie"
+        label:
+          en_US: "Douban Movie"
+          zh_Hans: "豆瓣电影"
+      - value: "douban-group"
+        label:
+          en_US: "Douban Group"
+          zh_Hans: "豆瓣讨论小组"
+      - value: "weread"
+        label:
+          en_US: "WeRead"
+          zh_Hans: "微信读书"
+      - value: "jianshu"
+        label:
+          en_US: "Jianshu"
+          zh_Hans: "简书"
+      - value: "zhihu-daily"
+        label:
+          en_US: "Zhihu Daily"
+          zh_Hans: "知乎日报"
+      - value: "huxiu"
+        label:
+          en_US: "Huxiu"
+          zh_Hans: "虎嗅"
+      - value: "coolapk"
+        label:
+          en_US: "CoolAPK"
+          zh_Hans: "酷安"
+      - value: "kuaishou"
+        label:
+          en_US: "Kuaishou"
+          zh_Hans: "快手"
+    label:
+      en_US: "Data Source"
+      zh_Hans: "数据源"
+    human_description:
+      en_US: "Select the data source to fetch hot topics from"
+      zh_Hans: "选择要获取热榜数据的来源"
+    llm_description: "The source of hot topics data"
+    form: llm
+  - name: limit
+    type: number
+    required: false
+    default: 30
+    min: 1
+    max: 100
+    label:
+      en_US: "Limit"
+      zh_Hans: "限制数量"
+    human_description:
+      en_US: "Number of items to return (1-100)"
+      zh_Hans: "返回的项目数量 (1-100)"
+    llm_description: "Number of hot topics to return"
+    form: llm
+  - name: cache
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: "Use Cache"
+      zh_Hans: "使用缓存"
+    human_description:
+      en_US: "Whether to use cached data (faster but may be less recent)"
+      zh_Hans: "是否使用缓存数据 (更快但可能不是最新的)"
+    llm_description: "Use cached data to improve performance"
+    form: llm
+
+extra:
+  python:
+    source: tools/daily-hot.py

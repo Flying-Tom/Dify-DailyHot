@@ -1,0 +1,32 @@
+version: 0.1.0
+type: plugin
+author: Flying-Tom
+name: daily-hot
+label:
+  en_US: daily-hot
+  zh_Hans: daily-hot
+description:
+  en_US: Dify plugin for fetching trending topics from 40+ sources via DailyHotApi
+  zh_Hans: 基于 DailyHotApi 的 Dify 插件，支持 40+ 数据源的热榜数据获取
+icon: icon.png
+icon_dark: icon-dark.png
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/daily-hot.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-12-17T22:21:13.482566292+08:00
+privacy: PRIVACY.md
+repo: https://github.com/Flying-Tom/Dify-DailyHot
+verified: false
