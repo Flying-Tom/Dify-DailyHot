@@ -1,7 +1,7 @@
-version: 0.1.0
+version: 0.1.1
 type: plugin
-author: Flying-Tom
-name: daily-hot
+author: flying-tom
+name: daily_hot
 label:
   en_US: daily-hot
   zh_Hans: daily-hot
@@ -17,7 +17,7 @@ plugins:
   tools:
     - provider/daily-hot.yaml
 meta:
-  version: 0.0.1
+  version: 0.1.1
   arch:
     - amd64
     - arm64

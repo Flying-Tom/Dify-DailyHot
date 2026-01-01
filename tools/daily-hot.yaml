@@ -1,6 +1,6 @@
 identity:
-  name: "daily-hot"
-  author: "Flying-Tom"
+  author: "flying-tom"
+  name: "daily_hot"
   label:
     en_US: "daily-hot"
     zh_Hans: "daily-hot"
